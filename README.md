@@ -36,6 +36,7 @@ sed -i s/home-assistant-mobile-apps/myproject/g ../.firebaserc
 ```
 
 You can set the `app.region` setting if you want to deploy your functions in a another location than `us-central1`, e.g. `europe-west1`:
+> Important: Firebase Hosting only supports cloud features like **rewrites** in us-central1.
 
 ```
 # Only once
@@ -45,11 +46,11 @@ firebase functions:config:set app.region="us-central1"
 Then deploy the Cloud Functions:
 
 ```
-firebase deploy
+firebase --debug deploy
 ```
 
-and deploy the site:
+deploy only the site:
 
 ```
-firebase deploy --only hosting
+firebase --debug deploy --only hosting
 ```
