@@ -17,6 +17,8 @@ Startup function for local testing:
 # Only Once
 npm install -g firebase-tools
 
+firebase login
+
 firebase functions:config:set debug.local=true
 firebase functions:config:get > .runtimeconfig.json
 
@@ -44,4 +46,10 @@ Then deploy the Cloud Functions:
 
 ```
 firebase deploy
+```
+
+and deploy the site:
+
+```
+firebase deploy --only hosting
 ```
